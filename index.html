@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+   <!-- score board -->
+<body>
+<div id="app">
+   <div class="wrapper">
+    <div class="scoreboard">
+      <div class="title">
+       <img src="images/logo.svg"/>
+      </div>
+      <div class="score">
+        <p>score</p>
+        <h2>{{count}}</h2>
+      </div>   
+    </div>
+    <!--end of score board -->
+
+    <!-- start of game -->
+    <div class="hands" v-show="user == '' && computer == ''">
+
+    
+      <div class="paper" @click="user = 'paper'; getComputerChoice()">
+       <img :src="option.paper"/>
+       
+     </div>
+      
+      <div class="scissor" @click="user = 'scissors'; getComputerChoice()">
+         <img :src="option.scissor"/>
+      </div>
+
+      <div class="rock" @click="user = 'rock'; getComputerChoice()">
+        <img :src="option.rock"/>
+      </div>
+
+      <div class="button-rules">
+        <button @click="displayRules">RULES</button>
+      </div>
+
+    </div>
+     <!-- end of game -->
+ 
+     <!-- start of result board -->
+    <div class="contest" v-show="user != '' && computer != ''">
+      <!-- start of user hand -->
+      <div class="user-hand">
+        <h2>you picked<br> {{user}}</h2>
+         
+
+        <div class='handimagecontainer paper'>
+          <div>
+          <p v-show="user ==='paper'" class="paper">
+            <img :src="option.paper"/>
+          </p>
+        </div>
+        <div>
+           <p v-show="user === 'scissors'" class="scissor">
+            <img :src="option.scissor"/>
+          </p>
+        </div>
+         
+         
+          <p v-show="user === 'rock'" class="rock">
+            <img :src="option.rock"/>
+          </p> 
+
+        </div>
+      </div>
+      <!-- end of user hand -->
+
+      <!-- start of result -->
+      <div class="referee">
+        <div class="decision">
+          <h1>{{determineWinner}}</h1>
+        
+          <div class="newGame">
+          <button @click="startOver()">PLAY AGAIN</button></div>
+        </div>
+      </div>
+      <!-- end of result -->
+
+      <!-- computer hand -->
+
+      <div class="computer-hand">
+        <h2>The House Picked<br>{{computer}}</h2>
+        <div class='handimagecontainer'>
+          <p v-if="computer === 'rock'" class="rock">
+            <img :src="option.rock"/>
+          </p>
+          <p v-else-if="computer === 'paper'" class="paper" >
+            <img :src="option.paper"/>
+          </p>
+          <p v-else="computer === 'scissor'" class="scissor">
+            <img :src="option.scissor"/>
+          </p>
+          
+      
+        </div>
+      </div>
+   
+    </div>
+
+   <!-- end of computer hand -->
+
+   <div class="modal-display" v-show="modalRules">
+    <div>
+      <h2>Rules</h2>
+      <h4 @click="modalRules=!modalRules">&times</h4>
+    </div>
+      <div>
+      <img src="./images/image-rules.svg"/>
+   </div>
+
+</div>
+
+
+
+  
+
+ 
+  <script src="app.js"></script>
+
+</body>
+</html>
