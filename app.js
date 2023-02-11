@@ -16,11 +16,11 @@ const app= Vue.createApp({
              
                 },
               computed:{
-                     setScore(count){
+                    //  setScore(count){
 
-                            console.log(count)
+                    //         console.log(count)
               
-                           },
+                    //        },
                 determineWinner() {
                
               //     userChoice = this.user, 
@@ -39,8 +39,8 @@ const app= Vue.createApp({
                       
                          
                     } else {
-                      return "user won!" &&
-                     this.count++;
+                      console.log("user won, rock", this.count);
+                      return "user won!" + " " + this.count++;
                      
                     
                     }
@@ -51,8 +51,8 @@ const app= Vue.createApp({
                      
                       return "computer won!";
                     }else{
-                      return "user won!" &&
-                      this.count++;
+                      console.log("user won, paper", this.count);
+                      return "user won!" + " " + this.count++;
                       
                      
                     }
@@ -65,8 +65,8 @@ const app= Vue.createApp({
                     
                     }
                     else {
-                      return "user won!" &&
-                      this.count++ ;
+                      console.log("user won, scissors", this.count);
+                      return "user won!" + " " + this.count+1 ;
                    
                     }
                   } 

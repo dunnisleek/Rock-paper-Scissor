@@ -162,4 +162,118 @@ body{
        cursor: pointer;
 }
 
-@me
+@media (min-width:480px) and (max-width : 768px) {
+     
+     }
+     @media screen and (max-width:480px){
+      
+       .scoreboard{
+              padding:15px;
+       }
+       .title img{
+              width:120px;
+       }
+       .score{
+         width: 77px;
+         margin: 0px;
+
+       }
+       .hands{
+              background-position: 80% 90%;
+              width:366px;
+       }
+       .paper img, .scissor img, .rock img{
+              width:25px;
+              position: relative;
+              top: -10px;
+              padding: 30px;
+       }
+      
+       .scissor img{
+              right: -68px;
+
+       }
+       .button-rules{
+              right:150px;
+              top:640px;
+       }
+       .contest {
+              width: 446px;
+              display: flex;
+              justify-content: space-evenly;
+              flex-wrap: wrap;
+              flex-shrink: inherit;
+            
+       }
+       .referee{
+              position: absolute;
+              top: 552px;
+              left: 158px;
+       }
+       .user-hand h2, .computer-hand h2 {
+              font-size: 16px;
+       }
+       .modal-display{
+              
+              width: 357px;
+              height: 80vh;
+              
+              position: absolute;
+              top: 35px;
+              border-radius: 30px;
+       }
+       .modal-display div h4{
+              position: absolute;
+              bottom: 0;
+              right:200px;
+       }
+      
+       .modal-display div {
+              
+              padding-top: 60px;
+     }
+}
+
+
+     @media (min-width : 480px) and (max-width : 768px) {
+       
+       .button-rules{
+              right: 17rem;
+              top: 44rem;
+       }
+       .modal-display{
+              
+              width: 357px;
+              height: 80vh;
+              
+              position: absolute;
+              top: 35px;
+              border-radius: 30px;
+       }
+       .modal-display div h4{
+              position: absolute;
+              bottom: 0;
+              right:200px;
+       }
+      
+       .modal-display div {
+              
+              padding-top: 60px;
+     }
+     .contest {
+       width: 446px;
+       display: flex;
+       justify-content: space-evenly;
+       flex-wrap: wrap;
+       flex-shrink: inherit;
+     
+}
+.referee{
+       position: absolute;
+       top: 552px;
+       left: 158px;
+}
+.user-hand h2, .computer-hand h2 {
+       font-size: 16px;
+}
+     }
