@@ -35,12 +35,16 @@ const app= Vue.createApp({
                   
                   if (this.user === "rock") {
                     if (this.computer === "paper") {
+                        if(this.count > 0){
+                        this.count--;  
+                      }
                       return "computer won!";
                       
                          
                     } else {
                       console.log("user won, rock", this.count);
-                      return "user won!" + " " + this.count++;
+                      this.count++
+                      return "user won!" ;
                      
                     
                     }
@@ -48,11 +52,14 @@ const app= Vue.createApp({
                   
                   if (this.user === "paper") {
                     if (this.computer === "scissors") {
-                     
-                      return "computer won!";
+                      if(this.count > 0){
+                        this.count--;  
+                      }
+                      return "computer won!" ;
                     }else{
+                      this.count++
                       console.log("user won, paper", this.count);
-                      return "user won!" + " " + this.count++;
+                      return "user won!" ;
                       
                      
                     }
@@ -61,12 +68,16 @@ const app= Vue.createApp({
                   
                   if (this.user === "scissors") {
                     if (this.computer === "rock") {
-                      return "computer won";
+                      if(this.count > 0){
+                        this.count--;  
+                      }
+                      return "computer won!";
                     
                     }
                     else {
+                      this.count++
                       console.log("user won, scissors", this.count);
-                      return "user won!" + " " + this.count+1 ;
+                      return "user won!";
                    
                     }
                   } 
